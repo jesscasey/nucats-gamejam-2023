@@ -337,7 +337,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 320, y: 180}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -545,21 +545,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8184402883698324912, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
-      propertyPath: m_ForceIntoRT
+    - target: {fileID: 8184402883698324914, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8184402883698324912, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
-      propertyPath: orthographic size
-      value: 7
+    - target: {fileID: 8184402883698324914, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
+      propertyPath: m_CropFrameX
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8184402883698324912, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8184402883698324912, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+    - target: {fileID: 8184402883698324914, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
+      propertyPath: m_CropFrameY
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8184402883698324915, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
       propertyPath: m_Name
@@ -579,7 +575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184402883698324927, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -100.8
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8184402883698324927, guid: c90d919c11cdd124294d4d1b00d5b083, type: 3}
       propertyPath: m_LocalRotation.w
