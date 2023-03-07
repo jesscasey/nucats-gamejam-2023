@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
             _localTimer = 0;
+            speedUpModifier += .2f;
             Debug.Log("TRANSITION");
             Destroy(_currentStateDisplay);
             _currentStateDisplay = Instantiate(_gameTransitionDisplay);

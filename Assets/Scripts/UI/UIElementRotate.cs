@@ -23,7 +23,7 @@ public class UIElementRotate : MonoBehaviour
         float sinTimer = Mathf.Sin(_timer * tau);
         float sinTimer2 = Mathf.Sin(_timer * tau * 2);
         transform.localEulerAngles = new Vector3(0, 0, 5 * sinTimer);
-        transform.localScale = Vector3.one * (1 + .1f * sinTimer2);
+        transform.localScale = Vector3.one * (1 + .1f * sinTimer2 * GameManager.speedUpModifier);
     }
 
     void SyncTimer(bool isWon)
