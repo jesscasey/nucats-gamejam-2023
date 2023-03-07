@@ -163,6 +163,7 @@ MonoBehaviour:
   _gameLoseDisplay: {fileID: 6335131952269224589, guid: b8c5ea9977a46cd41aa4c64ef75d83e8, type: 3}
   minigames:
   - {fileID: 7224583977117952456, guid: 4f961052c479ebc40af1155e1aedd5eb, type: 3}
+  - {fileID: 30014421627984134, guid: 937ff6d57369bf649a757ff080b5d9ba, type: 3}
 --- !u!4 &47414258
 Transform:
   m_ObjectHideFlags: 0

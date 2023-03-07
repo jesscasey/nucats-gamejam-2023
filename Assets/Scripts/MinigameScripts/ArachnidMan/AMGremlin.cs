@@ -7,6 +7,11 @@ public class AMGremlin : MonoBehaviour
     bool _direction = false;
     float _bombTimer = 0;
     [SerializeField] GameObject _bombPrefab;
+    Vector3 _originalScale;
+    private void Start()
+    {
+        _originalScale = transform.localScale;
+    }
 
     void Update()
     {
@@ -14,12 +19,13 @@ public class AMGremlin : MonoBehaviour
         if (transform.position.x >= 4)
         {
             _direction = false;
-            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.localScale = _originalScale;
+
         }
         if (transform.position.x <= -4)
         {
             _direction = true;
-            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-1 * _originalScale.x, _originalScale.y, _originalScale.z);
         }
         transform.Translate(5 * Vector3.right * speedUpDT * (_direction ? 1 : -1));
         _bombTimer += speedUpDT;
