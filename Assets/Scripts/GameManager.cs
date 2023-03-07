@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     float _localTimer; //timer local to the game manager, only increases when no minigame is played
      //currently in a minigame
     public static int cashScore; //Total cash gained
-    public static int lives = 4; //lives remaining
+    public static int lives = 3; //lives remaining
     public static float speedUpModifier = 1; //modifier to determine how fast a minigame is played
 
     [SerializeField] GameObject _gameStartDisplay;
