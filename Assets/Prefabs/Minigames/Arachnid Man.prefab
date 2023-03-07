@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2250664989752562538}
   - component: {fileID: 8778718942251124918}
   m_Layer: 0
-  m_Name: ArachnidManMinigame
+  m_Name: Arachnid Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
