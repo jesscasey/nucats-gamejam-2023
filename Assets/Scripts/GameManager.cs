@@ -51,14 +51,14 @@ public class GameManager : MonoBehaviour
         _gameState = GameState.MINIGAMEOVER;
         if (isWon)
         {
-            winMinigame?.Invoke();
             cashScore += 10;
+            winMinigame?.Invoke();
             _currentStateDisplay = Instantiate(_gameWinDisplay);
         }
         else
         {
-            loseMinigame?.Invoke();
             lives--;
+            loseMinigame?.Invoke();
             _currentStateDisplay = Instantiate(_gameLoseDisplay);
         }
         Destroy(currentMinigame);
