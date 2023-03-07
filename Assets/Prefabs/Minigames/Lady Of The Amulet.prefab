@@ -300,9 +300,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2c84e822170aceb4a95495882d904a7e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.905003, b: 0.740566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -325,3 +325,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _openHandSprite: {fileID: 21300000, guid: d0237ba8f287c0849838fcd98bcdc6a2, type: 3}
+  _amuletPrefab: {fileID: 244445334074023479, guid: 30c6d37d5120cf443b6ed73d998bfeee, type: 3}

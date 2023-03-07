@@ -5,6 +5,7 @@ using UnityEngine;
 public class LOTAHand : MonoBehaviour
 {
     [SerializeField] Sprite _openHandSprite;
+    [SerializeField] GameObject _amuletPrefab;
     enum HandState { OPEN,CLOSED}
     HandState _handState = HandState.CLOSED;
     // Update is called once per frame
@@ -36,6 +37,8 @@ public class LOTAHand : MonoBehaviour
     void OpenHand()
     {
         _handState = HandState.OPEN;
+        GameObject amulet = Instantiate(_amuletPrefab,new Vector3(0,1,0),Quaternion.identity);
+        amulet.transform.parent = transform.parent;
         GetComponent<SpriteRenderer>().sprite = _openHandSprite;
     }
 }
