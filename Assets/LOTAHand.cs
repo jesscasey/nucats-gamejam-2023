@@ -7,11 +7,6 @@ public class LOTAHand : MonoBehaviour
     [SerializeField] Sprite _openHandSprite;
     enum HandState { OPEN,CLOSED}
     HandState _handState = HandState.CLOSED;
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
