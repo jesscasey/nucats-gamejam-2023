@@ -13,6 +13,7 @@ public class AMBomb : MonoBehaviour
     }
     void Update()
     {
+        transform.Rotate(Vector3.forward * Time.deltaTime * 180);
         if (transform.position.y <= -5.5f)
         {
             Destroy(gameObject);
