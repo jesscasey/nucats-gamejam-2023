@@ -11,10 +11,15 @@ public class AMGremlin : MonoBehaviour
     void Update()
     {
         float speedUpDT = Time.deltaTime * GameManager.speedUpModifier;
-        if (Mathf.Abs(transform.position.x) >= 4)
+        if (transform.position.x >= 4)
         {
+            _direction = false;
             transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            _direction = !_direction;
+        }
+        if (transform.position.x <= -4)
+        {
+            _direction = true;
+            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         transform.Translate(5 * Vector3.right * speedUpDT * (_direction ? 1 : -1));
         _bombTimer += speedUpDT;
