@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class GBCrosshair : MonoBehaviour
 {
-
-    // Update is called once per frame
+    [SerializeField] GameObject _shotPrefab;
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject shot = Instantiate(_shotPrefab, transform.position, Quaternion.identity);
+            shot.transform.parent = transform.parent;
+        }
         MoveCrosshair();
     }
 
@@ -25,7 +29,7 @@ public class GBCrosshair : MonoBehaviour
         inputs[1] += Input.GetKey(KeyCode.W) ? 1 : 0;
         inputs = inputs.normalized;
 
-        Vector3 posChange = speed * inputs * 8;
+        Vector3 posChange = speed * inputs * 12;
         if (Mathf.Abs(transform.position.x + posChange.x) <= 8.75)
         {
             transform.Translate(Vector3.Scale(Vector3.right, posChange), Space.World);
