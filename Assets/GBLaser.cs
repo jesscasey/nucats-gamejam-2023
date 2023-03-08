@@ -14,7 +14,7 @@ public class GBLaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime * GameManager.speedUpModifier;
+        _timer += Time.deltaTime;
         if (_timer >= .2f)
         {
             Destroy(gameObject);
