@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GBGhoul : MonoBehaviour
 {
+    [SerializeField] AudioClip _dieNoise;
     float _timer;
     const float tau = Mathf.PI * 2;
     Vector3 _initPos;
@@ -59,6 +60,7 @@ public class GBGhoul : MonoBehaviour
         {
             return;
         }
+        GetComponent<AudioSource>().PlayOneShot(_dieNoise);
         Debug.Log("COLLISION)");
         _isAlive = false;
         _timer = 0f;

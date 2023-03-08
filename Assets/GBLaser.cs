@@ -15,10 +15,11 @@ public class GBLaser : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime * GameManager.speedUpModifier;
-        if (_timer >= .1f)
+        if (_timer >= .2f)
         {
             Destroy(gameObject);
         }
+        _lr.endWidth = Mathf.Max(_lr.endWidth-_timer, 0);
     }
     public void SetPositions(Vector3 pos1, Vector3 pos2)
     {
