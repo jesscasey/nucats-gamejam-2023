@@ -5,12 +5,17 @@ using UnityEngine;
 public class GBCrosshair : MonoBehaviour
 {
     [SerializeField] GameObject _shotPrefab;
+    [SerializeField] GameObject _laserPrefab;
+    [SerializeField] Transform _shootTransform;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject shot = Instantiate(_shotPrefab, transform.position, Quaternion.identity);
             shot.transform.parent = transform.parent;
+            GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+            laser.GetComponent<GBLaser>().SetPositions(transform.position, _shootTransform.position);
+            laser.transform.parent = transform.parent;
         }
         MoveCrosshair();
     }

@@ -6,7 +6,6 @@ public class Ghoulbusters : BaseMinigame
 {
     public int ghoulsKilled = 0;
     int ghoulsSpawned = 0;
-    int offset = 1;
     [SerializeField] GameObject _ghoulPrefab;
     private void OnEnable()
     {
