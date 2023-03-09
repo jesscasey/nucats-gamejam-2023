@@ -476,6 +476,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 756243295, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 11.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159610478, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159610478, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 11.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475537147, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 11.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512642119, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 11.29
+      objectReference: {fileID: 0}
     - target: {fileID: 927573487803078052, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
       propertyPath: m_Name
       value: UICanvas
@@ -568,6 +588,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 25542951}
+    - target: {fileID: 1445703890472169774, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
 --- !u!1001 &8184402883672847511
