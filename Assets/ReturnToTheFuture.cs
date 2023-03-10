@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReturnToTheFuture : MonoBehaviour
+public class ReturnToTheFuture : BaseMinigame
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        GameManager.winMinigame += Win;
+    }
+    private void Start()
+    {
+        AudioSource music = GetComponent<AudioSource>();
+        music.pitch = GameManager.speedUpModifier;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void Win()
     {
-        
+        _isWon = true;
+    }
+    private void Update()
+    {
+        _timer += Time.deltaTime * GameManager.speedUpModifier;
+        if (_timer >= 8f)
+        {
+            GameManager.endMinigame(_isWon);
+        }
     }
 }
