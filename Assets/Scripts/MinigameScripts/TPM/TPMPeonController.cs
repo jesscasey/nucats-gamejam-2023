@@ -24,11 +24,11 @@ public class TPMPeonController : MonoBehaviour
         inputs = inputs.normalized;
 
         Vector3 posChange = speed * inputs * 12;
-        if (Mathf.Abs(transform.position.x + posChange.x) <= 8.75)
+        if (transform.position.x + posChange.x <= 8.75 && transform.position.x + posChange.x >= -5)
         {
             transform.Translate(Vector3.Scale(Vector3.right, posChange), Space.World);
         }
-        if (Mathf.Abs(transform.position.y + posChange.y) <= 5)
+        if (Mathf.Abs(transform.position.y + posChange.y) <= 4.5)
         {
             transform.Translate(Vector3.Scale(Vector3.up, posChange), Space.World);
         }
