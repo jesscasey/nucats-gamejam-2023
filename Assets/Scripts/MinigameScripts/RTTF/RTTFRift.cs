@@ -59,6 +59,7 @@ public class RTTFRift : MonoBehaviour
 
     void GameLost()
     {
+        GetComponent<AudioSource>().Play();
         isLost = true;
     }
 }
