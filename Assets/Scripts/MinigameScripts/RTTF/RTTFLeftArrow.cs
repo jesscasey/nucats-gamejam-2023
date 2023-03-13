@@ -27,7 +27,7 @@ public class RTTFLeftArrow : MonoBehaviour
             GameManager.loseMinigame();
             Destroy(gameObject);
         }
-        if (arrowTimer >= 1.9f)
+        if (arrowTimer >= 1.3f)
         {
             GameManager.loseMinigame();
             Destroy(gameObject);
