@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RTTFBackground : MonoBehaviour
 {
+    [SerializeField] AudioSource _as;
     public bool isTurning = false;
     public bool right;
     bool isDriving = true;
@@ -62,6 +63,7 @@ public class RTTFBackground : MonoBehaviour
     {
         right = isRight;
         isTurning = true;
+        _as.Play();
     }
 
     void StopDriving()
