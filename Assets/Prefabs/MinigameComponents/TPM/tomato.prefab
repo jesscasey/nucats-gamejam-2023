@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7611257145981095184}
   - component: {fileID: 4959510839582779178}
   - component: {fileID: 410526179939433167}
+  - component: {fileID: 7374298356430106812}
   m_Layer: 0
   m_Name: tomato
   m_TagString: Untagged
@@ -118,3 +119,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88f9e9b75231324a9bee6d9d06f14c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &7374298356430106812
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137360313859341961}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class TPMTomato : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject _splat;
+    Rigidbody2D _rb;
+    private void Start()
     {
-        
+        _rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.right * Time.deltaTime * GameManager.speedUpModifier*10, Space.World);
+        transform.Rotate(Vector3.forward * Time.deltaTime * 180);
+        if (transform.position.x >=8.5f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

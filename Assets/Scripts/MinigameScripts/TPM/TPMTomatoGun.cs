@@ -7,6 +7,7 @@ public class TPMTomatoGun : MonoBehaviour
     bool _direction = false;
     float _tomatoTimer = 0;
     [SerializeField] GameObject _tomatoPrefab;
+    [SerializeField] Transform _gunPoint;
 
     private void Start()
     {
@@ -23,13 +24,13 @@ public class TPMTomatoGun : MonoBehaviour
         {
             _direction = true;
         }
-        transform.Translate(5 * Vector3.up * speedUpDT * (_direction ? 1 : -1));
+        transform.Translate(7 * Vector3.up * speedUpDT * (_direction ? 1 : -1));
         _tomatoTimer += speedUpDT;
-        if (_tomatoTimer >= .8)
+        if (_tomatoTimer >= .5)
         {
-            GameObject tomato = Instantiate(_tomatoPrefab, transform.position, Quaternion.identity);
+            GameObject tomato = Instantiate(_tomatoPrefab, _gunPoint.position, Quaternion.identity);
             tomato.transform.parent = transform.parent;
-            _tomatoTimer = Random.Range(-.1f, .5f);
+            _tomatoTimer = Random.Range(-.1f, .2f);
         }
     }
 }

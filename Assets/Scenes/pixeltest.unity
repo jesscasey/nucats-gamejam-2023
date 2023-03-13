@@ -162,7 +162,7 @@ MonoBehaviour:
   _gameWinDisplay: {fileID: 3959591278905865720, guid: 56cb01b6ad4322344a26e7cf036e9a22, type: 3}
   _gameLoseDisplay: {fileID: 6335131952269224589, guid: b8c5ea9977a46cd41aa4c64ef75d83e8, type: 3}
   minigames:
-  - {fileID: 2836965794344403662, guid: 83d6db62810bcb14b959cd88b02239ec, type: 3}
+  - {fileID: 5916668667026529598, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
 --- !u!4 &47414258
 Transform:
   m_ObjectHideFlags: 0
@@ -592,63 +592,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8fc919dab76e284f9dad5ba49465b4e, type: 3}
---- !u!1001 &6451136933725075455
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801913740437445533, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5916668667026529598, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
-      propertyPath: m_Name
-      value: PeonMovie
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 147cb10c1ea02534c9459aa396d4dc16, type: 3}
 --- !u!1001 &8184402883672847511
 PrefabInstance:
   m_ObjectHideFlags: 0
