@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RTTFRightArrow : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer sr;
     bool canTurn = true;
     float arrowTimer = 0f;
+    bool turnedRight = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +18,28 @@ public class RTTFRightArrow : MonoBehaviour
     void Update()
     {
         arrowTimer += Time.deltaTime * GameManager.speedUpModifier;
-        if (Input.GetKeyDown(KeyCode.D)&& canTurn)
+        if (Input.GetKeyDown(KeyCode.D) && canTurn)
         {
             canTurn = false;
-            ReturnToTheFuture.turn(true);
-            Destroy(gameObject);
+            turnedRight = true;
+            sr.enabled = false;
         }
-        else if(Input.GetKeyDown(KeyCode.A) && canTurn)
+        else if (Input.GetKeyDown(KeyCode.A) && canTurn)
         {
-            GameManager.loseMinigame();
+            canTurn = false;
+            turnedRight = false;
+            sr.enabled = false;
+        }
+        if (arrowTimer >= 1.3f && !canTurn)
+        {
+            ReturnToTheFuture.turn(turnedRight);
+            if (!turnedRight)
+            {
+                GameManager.loseMinigame();
+            }
             Destroy(gameObject);
         }
-        if (arrowTimer >= 1.3f)
+        else if (arrowTimer >= 1.3f && canTurn)
         {
             GameManager.loseMinigame();
             Destroy(gameObject);

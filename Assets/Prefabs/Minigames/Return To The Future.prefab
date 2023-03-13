@@ -153,6 +153,7 @@ MonoBehaviour:
   _arrowPoint: {fileID: 6511454417356843259}
   _leftArrow: {fileID: 2584515267600217667, guid: d5c5b184dc342194a8087ed8a16e0628, type: 3}
   _rightArrow: {fileID: 3558265629530505045, guid: 3d329fb2af8f6e644a59ea64b4ae11cc, type: 3}
+  _riftPrefab: {fileID: 1384735290513275083, guid: ec8b7ea755e322e439c7ba95cb43a64d, type: 3}
 --- !u!82 &7761964091352074023
 AudioSource:
   m_ObjectHideFlags: 0

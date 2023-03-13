@@ -8,6 +8,7 @@ public class ReturnToTheFuture : BaseMinigame
     [SerializeField] Transform _arrowPoint;
     [SerializeField] GameObject _leftArrow;
     [SerializeField] GameObject _rightArrow;
+    [SerializeField] GameObject _riftPrefab;
     public delegate void Turn(bool right);
     public static Turn turn;
     int _arrowsCreated = 0;
@@ -44,20 +45,7 @@ public class ReturnToTheFuture : BaseMinigame
         if (_timer>.3f && _arrowsCreated == 0)
         {
             _arrowsCreated++;
-           if(Random.Range(0, 2) == 0)
-            {
-                GameObject arrow = Instantiate(_leftArrow, _arrowPoint);
-                arrow.transform.position = _arrowPoint.transform.position;
-            }
-            else
-            {
-                GameObject arrow = Instantiate(_rightArrow, _arrowPoint);
-                arrow.transform.position = _arrowPoint.transform.position;
-            }
-        }
-        if (_timer > 2.3f && _arrowsCreated == 1)
-        {
-            _arrowsCreated++;
+            GameObject rift = Instantiate(_riftPrefab, transform);
             if (Random.Range(0, 2) == 0)
             {
                 GameObject arrow = Instantiate(_leftArrow, _arrowPoint);
@@ -65,6 +53,23 @@ public class ReturnToTheFuture : BaseMinigame
             }
             else
             {
+                rift.GetComponent<RTTFRift>().riftDirection = -1;
+                GameObject arrow = Instantiate(_rightArrow, _arrowPoint);
+                arrow.transform.position = _arrowPoint.transform.position;
+            }
+        }
+        if (_timer > 2.3f && _arrowsCreated == 1)
+        {
+            _arrowsCreated++;
+            GameObject rift = Instantiate(_riftPrefab, transform);
+            if (Random.Range(0, 2) == 0)
+            {
+                GameObject arrow = Instantiate(_leftArrow, _arrowPoint);
+                arrow.transform.position = _arrowPoint.transform.position;
+            }
+            else
+            {
+                rift.GetComponent<RTTFRift>().riftDirection = -1;
                 GameObject arrow = Instantiate(_rightArrow, _arrowPoint);
                 arrow.transform.position = _arrowPoint.transform.position;
             }

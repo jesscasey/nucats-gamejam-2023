@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RTTFLeftArrow : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer sr;
     bool canTurn = true;
     float arrowTimer = 0f;
+    bool turnedRight = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,25 @@ public class RTTFLeftArrow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && canTurn)
         {
             canTurn = false;
-            ReturnToTheFuture.turn(false);
-            Destroy(gameObject);
+            turnedRight = false;
+            sr.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.D) && canTurn)
         {
-            GameManager.loseMinigame();
+            canTurn = false;
+            turnedRight = true;
+            sr.enabled = false;
+        }
+        if (arrowTimer >= 1.3f&& !canTurn)
+        {
+            ReturnToTheFuture.turn(turnedRight);
+            if (turnedRight)
+            {
+                GameManager.loseMinigame();
+            }
             Destroy(gameObject);
         }
-        if (arrowTimer >= 1.3f)
+        else if (arrowTimer >= 1.3f && canTurn)
         {
             GameManager.loseMinigame();
             Destroy(gameObject);
