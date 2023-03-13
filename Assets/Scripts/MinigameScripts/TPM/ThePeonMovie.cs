@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ThePeonMovie : BaseMinigame
 {
+    public bool gameIsLost = false;
     private void OnEnable()
     {
         GameManager.loseMinigame += Lose;
@@ -18,6 +19,7 @@ public class ThePeonMovie : BaseMinigame
     void Lose()
     {
         _isLost = true;
+        gameIsLost = true;
     }
     private void Update()
     {

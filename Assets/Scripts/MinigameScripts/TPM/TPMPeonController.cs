@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class TPMPeonController : MonoBehaviour
 {
+    bool isLost;
+
+    private void OnEnable()
+    {
+        GameManager.loseMinigame += GameLost;
+    }
+    private void OnDisable()
+    {
+        GameManager.loseMinigame -= GameLost;
+    }
     void Update()
     {
         MovePeon();
@@ -11,6 +21,7 @@ public class TPMPeonController : MonoBehaviour
 
     private void MovePeon()
     {
+        if (isLost) return;
         float speed = Time.deltaTime * GameManager.speedUpModifier;
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W))
         {
@@ -32,5 +43,10 @@ public class TPMPeonController : MonoBehaviour
         {
             transform.Translate(Vector3.Scale(Vector3.up, posChange), Space.World);
         }
+    }
+
+    void GameLost()
+    {
+        isLost = true;
     }
 }

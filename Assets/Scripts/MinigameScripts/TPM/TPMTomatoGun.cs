@@ -26,7 +26,7 @@ public class TPMTomatoGun : MonoBehaviour
         }
         transform.Translate(7 * Vector3.up * speedUpDT * (_direction ? 1 : -1));
         _tomatoTimer += speedUpDT;
-        if (_tomatoTimer >= .5)
+        if (_tomatoTimer >= .4)
         {
             GameObject tomato = Instantiate(_tomatoPrefab, _gunPoint.position, Quaternion.identity);
             tomato.transform.parent = transform.parent;

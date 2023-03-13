@@ -16,6 +16,10 @@ public class TPMTomato : MonoBehaviour
         transform.Rotate(Vector3.forward * Time.deltaTime * 180);
         if (transform.position.x >=8.5f)
         {
+            if (!transform.parent.GetComponent<ThePeonMovie>().gameIsLost)
+            {
+                GameManager.loseMinigame();
+            }
             Destroy(gameObject);
         }
     }
