@@ -13,13 +13,14 @@ public class TPMTomato : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * Time.deltaTime * GameManager.speedUpModifier*10, Space.World);
-        transform.Rotate(Vector3.forward * Time.deltaTime * 180);
+        transform.Rotate(Vector3.forward * Time.deltaTime * -180);
         if (transform.position.x >=8.5f)
         {
             if (!transform.parent.GetComponent<ThePeonMovie>().gameIsLost)
             {
                 GameManager.loseMinigame();
             }
+            Instantiate(_splat, transform.position, Quaternion.identity).transform.parent = transform.parent;
             Destroy(gameObject);
         }
     }

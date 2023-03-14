@@ -8,6 +8,7 @@ public class TPMTomatoGun : MonoBehaviour
     float _tomatoTimer = 0;
     [SerializeField] GameObject _tomatoPrefab;
     [SerializeField] Transform _gunPoint;
+    [SerializeField] AudioSource _as;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class TPMTomatoGun : MonoBehaviour
         _tomatoTimer += speedUpDT;
         if (_tomatoTimer >= .4)
         {
+            _as.Play();
             GameObject tomato = Instantiate(_tomatoPrefab, _gunPoint.position, Quaternion.identity);
             tomato.transform.parent = transform.parent;
             _tomatoTimer = Random.Range(-.1f, .2f);
