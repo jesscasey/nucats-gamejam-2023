@@ -25,7 +25,7 @@ public class LOTAHand : MonoBehaviour
         transform.Translate(Vector3.down * Time.deltaTime * GameManager.speedUpModifier);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Translate(Vector3.up * .5f);
+            transform.Translate(Vector3.up * .8f);
             if (transform.position.y >= -1)
             {
                 OpenHand();
