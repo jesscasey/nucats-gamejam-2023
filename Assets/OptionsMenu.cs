@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
     
     public AudioMixer soundEffectsMixer;
     public AudioMixer musicMixer;
+
+    public Slider soundEffectsSlider;
+    public Slider musicSlider;
     [SerializeField] GameObject _popcorn;
+    [SerializeField] GameObject _mainMenu;
     [SerializeField] Transform _musicTextTransform;
     [SerializeField] Transform _soundTextTransform;
     [SerializeField] Transform _exitTextTransform;
@@ -76,11 +81,37 @@ public class OptionsMenu : MonoBehaviour
                     break;
             }
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            switch (_currentOption)
+            {
+                case 0:
+                    musicSlider.value += .1f;
+                    break;
+                case 1:
+                    soundEffectsSlider.value += .1f;
+                    break;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            switch (_currentOption)
+            {
+                case 0:
+                    musicSlider.value -= .1f;
+                    break;
+                case 1:
+                    soundEffectsSlider.value -= .1f;
+                    break;
+            }
+        }
 
     }
+
     void CloseOptions()
     {
-        Debug.Log("options");
+        _mainMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 }

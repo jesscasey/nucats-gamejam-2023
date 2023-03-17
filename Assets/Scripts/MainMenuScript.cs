@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject[] _popcorns;
+    [SerializeField] GameObject _optionsMenu;
     [SerializeField] Transform _playTextTransform;
     [SerializeField] Transform _optionsTextTransform;
 
@@ -60,6 +61,7 @@ public class MainMenuScript : MonoBehaviour
 
     void OpenOptions()
     {
-        Debug.Log("options");
+        _optionsMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
