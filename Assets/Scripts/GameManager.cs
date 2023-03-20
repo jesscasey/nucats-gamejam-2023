@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] minigames; //all minigame prefabs
     GameObject currentMinigame;
 
+    bool _loadWait = true;
+
     public delegate void BeginMinigame();
     public static BeginMinigame beginMinigame;
     public delegate void WinMinigame();
@@ -78,6 +80,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (_loadWait)
+        {
+            _localTimer += Time.deltaTime;
+            if (_localTimer >= 2f)
+            {
+                _currentStateDisplay = Instantiate(_gameStartDisplay);
+                _loadWait = false;
+                _localTimer = 0f;
+            }
+            return;
+        }
         switch (_gameState)
         {
             case GameState.GAMESTART:
@@ -99,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _currentStateDisplay = Instantiate(_gameStartDisplay);
+        
         cashScore = 0; //Total cash gained
         lives = 3; //lives remaining
         speedUpModifier = 1; //modifier to determine how fast a minigame is played
