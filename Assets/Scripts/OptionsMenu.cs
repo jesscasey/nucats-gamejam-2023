@@ -61,7 +61,6 @@ public class OptionsMenu : MonoBehaviour
         {
             _currentOption = 0;
         }
-        Debug.Log(_currentOption);
         if (_currentOption == 0)
         {
             _popcorn.transform.position = new Vector3(_popcorn.transform.position.x, _musicTextTransform.position.y, _popcorn.transform.position.z);

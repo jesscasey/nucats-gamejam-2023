@@ -59,7 +59,7 @@ public class MainMenuScript : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene(1); //load main game scene, change to load slower and have COOL effect
+        SceneManager.LoadScene(2); //load main game scene, change to load slower and have COOL effect
     }
 
     void OpenOptions()
