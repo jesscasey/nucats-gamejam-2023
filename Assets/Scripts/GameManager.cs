@@ -15,6 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _gameTransitionDisplay;
     [SerializeField] GameObject _gameWinDisplay;
     [SerializeField] GameObject _gameLoseDisplay;
+
+    [SerializeField] GameObject _gameOverDisplay;
+    [SerializeField] GameObject _gameOverText;
+
+    [SerializeField] GameObject _UICanvas;
+
+    bool _exitCreated = false;
+    [SerializeField] GameObject _exitToMenuObject;
+
+    [SerializeField] GameObject _moneyText;
     GameObject _currentStateDisplay;
     [SerializeField] GameObject[] minigames; //all minigame prefabs
     GameObject currentMinigame;
@@ -122,6 +132,10 @@ public class GameManager : MonoBehaviour
             if (lives <= 0)
             {
                 Debug.Log("GAMEOVER");
+                _localTimer = 0;
+                Destroy(_currentStateDisplay);
+                _currentStateDisplay = Instantiate(_gameOverDisplay);
+                Instantiate(_gameOverText, _UICanvas.transform);
                 _gameState = GameState.GAMEOVER;
                 return;
             }
@@ -136,5 +150,15 @@ public class GameManager : MonoBehaviour
     void UpdateGameOver()
     {
         _localTimer += Time.deltaTime;
+        if (_localTimer <= 1)
+        {
+            _moneyText.GetComponent<RectTransform>().localPosition = Vector3.Lerp(new Vector3(0, -442, 0), new Vector3(0, -50, 0), _localTimer);
+        }
+            
+        if(_localTimer>= 2 && !_exitCreated)
+        {
+            _exitCreated = true;
+            Instantiate(_exitToMenuObject,_UICanvas.transform);
+        }
     }
 }
