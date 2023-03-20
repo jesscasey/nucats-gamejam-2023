@@ -10,6 +10,7 @@ public class OptionsMenu : MonoBehaviour
     
     public AudioMixer soundEffectsMixer;
     public AudioMixer musicMixer;
+    [SerializeField] AudioSource _as;
 
     public Slider soundEffectsSlider;
     public Slider musicSlider;
@@ -45,10 +46,12 @@ public class OptionsMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             _currentOption -= 1;
+            _as.Play();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             _currentOption += 1;
+            _as.Play();
         }
         if (_currentOption < 0)
         {
@@ -90,6 +93,7 @@ public class OptionsMenu : MonoBehaviour
                     break;
                 case 1:
                     soundEffectsSlider.value += .1f;
+                    _as.Play();
                     break;
             }
         }
@@ -102,6 +106,7 @@ public class OptionsMenu : MonoBehaviour
                     break;
                 case 1:
                     soundEffectsSlider.value -= .1f;
+                    _as.Play();
                     break;
             }
         }

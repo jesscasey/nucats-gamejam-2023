@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject _optionsMenu;
     [SerializeField] Transform _playTextTransform;
     [SerializeField] Transform _optionsTextTransform;
+    [SerializeField] AudioSource _as;
 
     int _currentOption = 0;
     // Start is called before the first frame update
@@ -26,10 +27,12 @@ public class MainMenuScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             _currentOption -= 1;
+            _as.Play();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             _currentOption += 1;
+            _as.Play();
         }
         _currentOption = _currentOption % 2;
         foreach (GameObject popcorn in _popcorns)
