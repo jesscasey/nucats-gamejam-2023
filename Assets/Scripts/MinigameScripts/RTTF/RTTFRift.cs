@@ -40,7 +40,7 @@ public class RTTFRift : MonoBehaviour
             Destroy(gameObject);
         }
         transform.Translate(Vector3.right * Time.deltaTime * GameManager.speedUpModifier * riftDirection * 2,Space.World);
-        transform.localScale = Vector3.one * Mathf.InverseLerp(0, 1.4f, riftTimer);
+        transform.localScale = Vector3.one * Mathf.InverseLerp(0, 1.1f, riftTimer);
         transform.localEulerAngles += Vector3.forward * Time.deltaTime * GameManager.speedUpModifier * 180;
     }
 

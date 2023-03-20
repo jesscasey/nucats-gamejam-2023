@@ -30,7 +30,7 @@ public class RTTFRightArrow : MonoBehaviour
             turnedRight = false;
             sr.enabled = false;
         }
-        if (arrowTimer >= 1.3f && !canTurn)
+        if (arrowTimer >= 1.1f && !canTurn)
         {
             ReturnToTheFuture.turn(turnedRight);
             if (!turnedRight)
@@ -39,7 +39,7 @@ public class RTTFRightArrow : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (arrowTimer >= 1.3f && canTurn)
+        else if (arrowTimer >= 1.1f && canTurn)
         {
             GameManager.loseMinigame();
             Destroy(gameObject);
