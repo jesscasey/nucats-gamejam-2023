@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject[] _popcorns;
     [SerializeField] GameObject _optionsMenu;
+    [SerializeField] Image _fadeOut;
     [SerializeField] Transform _playTextTransform;
     [SerializeField] Transform _optionsTextTransform;
     [SerializeField] AudioSource _as;
+    [SerializeField] AudioSource _music;
+    float _timer = 0;
+    bool _beginGame = false;
 
     int _currentOption = 0;
     // Start is called before the first frame update
@@ -24,6 +29,17 @@ public class MainMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_beginGame)
+        {
+            _timer += 2*Time.deltaTime;
+            if (_timer >= 1.3f)
+            {
+                SceneManager.LoadScene(2);
+            }
+            _fadeOut.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, _timer));
+            _music.volume = Mathf.Lerp(.8f, 0, _timer);
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.W))
         {
             _currentOption -= 1;
@@ -59,7 +75,7 @@ public class MainMenuScript : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene(2); //load main game scene, change to load slower and have COOL effect
+        _beginGame = true; //load main game scene, change to load slower and have COOL effect
     }
 
     void OpenOptions()
