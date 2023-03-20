@@ -140,6 +140,18 @@ public class GameManager : MonoBehaviour
                 return;
             }
             _localTimer = 0;
+            if(cashScore >= 150)
+            {
+                speedUpModifier = 2f;
+            }
+            else if(cashScore >= 100)
+            {
+                speedUpModifier = 1.5f;
+            }
+            else if (cashScore >= 50)
+            {
+                speedUpModifier = 1.2f;
+            }
             speedUpModifier += .2f;
             Debug.Log("TRANSITION");
             Destroy(_currentStateDisplay);
