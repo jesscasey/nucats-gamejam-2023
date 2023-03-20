@@ -100,7 +100,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _currentStateDisplay = Instantiate(_gameStartDisplay);
-    }
+        cashScore = 0; //Total cash gained
+        lives = 3; //lives remaining
+        speedUpModifier = 1; //modifier to determine how fast a minigame is played
+}
     void UpdateGameStart()
     {
         _localTimer += Time.deltaTime * speedUpModifier;
@@ -152,7 +155,6 @@ public class GameManager : MonoBehaviour
             {
                 speedUpModifier = 1.2f;
             }
-            speedUpModifier += .2f;
             Debug.Log("TRANSITION");
             Destroy(_currentStateDisplay);
             _currentStateDisplay = Instantiate(_gameTransitionDisplay);
